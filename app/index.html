@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Producer</title>
+  <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
+  <link rel="stylesheet" type="text/css" href="main.css">
+  <script src="./app.js"></script>
+ 
+
+</head>
+
+<body>
+  <div class="container">
+    <h1>Producer</h1>
+
+  <label for="name" class="col-lg-2 control-label">Product ID</label>
+  <input id="productId" type="text">
+
+  <label for="name" class="col-lg-2 control-label">Product Name</label>
+  <input id="productName" type="text">
+
+  <label for="name" class="col-lg-2 control-label">Product Details</label>
+  <input id="productDetails" type="text">
+
+  <label for="name" class="col-lg-2 control-label">Farm</label>
+  <input id="farm" type="text">
+
+  <label for="name" class="col-lg-2 control-label">Location</label>
+  <input id="location" type="text">
+
+  <label for="name" class="col-lg-2 control-label">Price/unit</label>
+  <input id="price" type="text">
+
+  <label for="name" class="col-lg-2 control-label">quantity</label>
+  <input id="quantity" type="text">
+
+  <label for="name" class="col-lg-2 control-label">Mfg.Date</label>
+  <input style="border:none;background-color:transparent" id="mfg" type="text">
+
+  <label for="name" class="col-lg-2 control-label">Certificate</label>
+  <span id="certificate">
+
+  <button id="addNewProduct" onclick="App.addNewProduct()">Add New Product</button>
+  <button id="getProduct" onclick="App.getProduct()">Get Product Details</button>
+  
+  
+  <span id="message" />
+<br>
+
+  <h1>Product Count</h1>
+  Product Count:<input style="border:none;background-color:transparent" id="count"><br>
+  <button id="productCount" onclick="App.getProductCount()">Product Count</button><br>
+
+  <h1>Distributor</h1>
+  <label for="name" class="col-lg-2 control-label">Distributor Name</label>
+  <input id="distributorName" type="text">
+
+  <label for="name" class="col-lg-2 control-label">Distributor Location</label>
+  <input id="distributorLoc" type="text">
+
+  <button id="addDetails" onclick="App.addDetails()">Add New Distributor</button>
+
+  <label for="name" class="col-lg-2 control-label">Product ID</label>
+  <input id="_productId" type="text">
+
+  <label for="name" class="col-lg-2 control-label">Quantity</label>
+  <input id="_quantity" type="text"><br>
+  
+  Product Name: <input style="border:none;background-color:transparent" id="pdt"><br>
+  Quantity: <input style="border:none;background-color:transparent" id="quan"><br>
+  Price: <input style="border:none;background-color:transparent" id="rate"><br>
+  Transferred from  <input style="border:none;background-color:transparent" id="farmer">to <input style="border:none;background-color:transparent" id="distributor"><br>
+  
+   
+  <button id="purchase" onclick="App.purchase()">Purchase Product</button>
+
+</body>
+
+</html>

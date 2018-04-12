@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Track it</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+  <link href='https://fonts.googleapis.com/css?family=Open+Sans:300,700' rel='stylesheet' type='text/css'>
+  <script src="jquery-3.3.1.min.js"></script>
+  <script src="./app.js"></script>
+  <script>
+   $(document).on('change', '.div-toggle', function() {
+  var target = $(this).data('target');
+  var show = $("option:selected", this).data('show');
+  $(target).children().addClass('hide');
+  $(show).removeClass('hide');
+  });
+  $(document).ready(function(){
+	$('.div-toggle').trigger('change');
+  });
+  </script>
+  <style>
+  .hide {
+  display: none;
+  }
+
+  .jumbotron
+   {   
+    padding-top: 0px;
+    padding-bottom:0px;
+    background-size: cover;
+    height:145px;
+ }
+  </style>
+</head>
+<body>
+
+<div class="jumbotron text-center">
+  <h1>Track it</h1>
+  <p><h3>Food supply chain management app</h3></p>
+  Enter your Role &#9;<select class="div-toggle" data-target=".my-info-1">
+  <option value="chair" data-show=".chair">ChairPerson</option>
+  <option value="producer" data-show=".producer">Producer</option>
+  <option value="distributor" data-show=".distributor">Distributor</option>
+  <option value="consumer" data-show=".consumer">Consumer</option>
+</select>
+</div>
+<div class="my-info-1">
+<!-- chair person -->
+<div class="chair hide">
+
+  <div class="row">
+    <div class="col-sm-4">
+      <h3>Enter Entity</h3>
+      <label for="_name" class="col-lg-2 control-label">Name</label>
+      <input id="_name" type="text"><br><br>
+    
+      <label for="_addr" class="col-lg-2 control-label">Address</label>
+      <input id="_addr" type="text"><br><br>
+    
+      <label for="_entity_info" class="col-lg-2 control-label">Additional Information</label>
+      <input id="_entity_info" type="text"><br><br>
+      
+      <button id="setEntityInfo" onclick="App.setEntityInfo()">Add New Entity</button><br><br>
+
+      Block Hash:  <span id="blockHash"></span><br><br>
+      Name:  <span id="ename" type="text"></span><br><br>
+      <span id="print"></span><br><br>
+    </div>
+
+    <div class="col-sm-4">
+      <h3>Get Entity Details</h3><br><br>
+      <label for="_name" class="col-lg-2 control-label">Address</label>
+      <input id="_address" type="text"><br>
+
+      <button id="getEntityInfo" onclick="App.getEntityInfo()">Get Entity</button><br><br>
+      Role:  <input style="border:none;background-color:transparent" id="roles"><br><br>
+      Name:  <input style="border:none;background-color:transparent" type="text" id="_name1"><br><br>
+      Address:<input style="border:none;background-color:transparent" type="text" id="_addr1"><br><br>
+      Entity Information: <input style="border:none;background-color:transparent"  type="text" id="_entity_info1"><br><br>
+  </div>
+    </div>
+    <div class="col-sm-4">
+      <h3>Set Role</h3><br><br>
+      <label for="setAddress" class="col-lg-2 control-label">Address</label>
+      <input id="setAddress" type="text"><br><br>
+    
+      <label for="setRole" class="col-lg-2 control-label">Role</label>
+      <input id="setRole" type="text"><br><br>
+    
+      <label for="setAmount" class="col-lg-2 control-label">Amount</label>
+      <input id="setAmount" type="text"><br><br>
+      
+      <button type="button" onclick='document.getElementById("demo").innerHTML = "0-Producer 1-Distributor 2-Retailer"'>Conditions</button>
+      <p id="demo"></p>
+      <button id="setRole" onclick="App.setRole()">Set Role</button><br><br>
+
+    </div>
+
+
+      <div class="col-sm-4">
+       <h3>Get Role</h3><br><br>
+
+      <label for="getAddress" class="col-lg-2 control-label">Address</label>
+      <input id="getAddress" type="text"><br><br>
+
+      <button id="getRol" onclick="App.getRole()">Get Role</button><br><br>
+      Role:  <input style="border:none;background-color:transparent" id="getRole"><br><br>
+      Name:  <input style="border:none;background-color:transparent" id="getName"><br><br>
+      Amount: <input style="border:none;background-color:transparent" id="getAmount"><br><br>
+      </div>
+  </div>
+
+  <div class="producer hide">
+  <div class="col-sm-4">
+   <h3>Enter Product Details</h3><br><br>
+
+      <label for="_id" class="col-lg-2 control-label">Product ID</label>
+      <input id="_id" type="text"><br><br>
+
+      <label for="_pname" class="col-lg-2 control-label">Product Name</label>
+      <input id="_pname" type="text"><br><br>
+    
+      <label for="_organic" class="col-lg-2 control-label">Organic</label>
+      <input id="_organic" type="text"><br><br>
+    
+      <label for="_infog" class="col-lg-2 control-label">Additional Information</label>
+      <input id="_infog" type="text"><br><br>
+
+      <label for="_value" class="col-lg-2 control-label">Quantity</label>
+      <input id="_value" type="text"><br><br>
+
+      <label for="_value" class="col-lg-2 control-label">Price</label>
+      <input id="_price" type="text"><br><br>
+
+      <label for="_cond" class="col-lg-2 control-label">Condition</label>
+      <input id="_cond" type="text"><br><br>
+      
+      <button id="producerEnterProductDetails" onclick="App.producerEnterProductDetails()">Enter Product Details</button><br><br> 
+  </div>
+   <div class="col-sm-4">
+    <h3>Get Product Details</h3><br><br>
+    <label for="_pid" class="col-lg-2 control-label">Product ID</label>
+    <input id="_pid" type="text"><br>
+
+    <button id="getProductInfoByProducer1" onclick="App.getProductInfoByProducer1()">View Product Details</button><br><br>
+    Owner:  <input style="border:none;background-color:transparent" id="_roles"><br><br>
+    Name:  <input style="border:none;background-color:transparent" type="text" id="_name2"><br><br>
+    Address:<input style="border:none;background-color:transparent" type="text" id="_addr2"><br><br>
+    Entity Information: <input style="border:none;background-color:transparent"  type="text" id="_entity_info2"><br><br>
+
+    Product Name:  <input style="border:none;background-color:transparent" id="_pname1"><br><br>
+    Organic:  <input style="border:none;background-color:transparent" type="text" id="_porg"><br><br>
+    Product info:<input style="border:none;background-color:transparent" type="text" id="_pinfo"><br><br>
+    Product Value: <input style="border:none;background-color:transparent"  type="text" id="_pvalue"><br><br>
+    Product Price: <input style="border:none;background-color:transparent"  type="text" id="_pprice"><br><br>
+    Mfg Date:  <input style="border:none;background-color:transparent" id="_ptime"><br><br>
+
+   </div>
+
+
+</div>
+
+  <div class="distributor hide">A pome is...</div>
+
+  <div class="consumer hide">A pome is...</div>
+
+</div>
+</body>
+</html>
+

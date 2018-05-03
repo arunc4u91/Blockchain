@@ -1,0 +1,750 @@
+[
+	{
+		"constant": true,
+		"inputs": [],
+		"name": "displayForRetailer1",
+		"outputs": [
+			{
+				"name": "",
+				"type": "uint256[]"
+			},
+			{
+				"name": "",
+				"type": "uint256[]"
+			},
+			{
+				"name": "",
+				"type": "bytes32[]"
+			},
+			{
+				"name": "",
+				"type": "uint256[]"
+			},
+			{
+				"name": "",
+				"type": "bytes32[]"
+			},
+			{
+				"name": "",
+				"type": "address[]"
+			}
+		],
+		"payable": false,
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"constant": true,
+		"inputs": [],
+		"name": "displayForRetailer2",
+		"outputs": [
+			{
+				"name": "",
+				"type": "uint256[]"
+			},
+			{
+				"name": "",
+				"type": "uint256[]"
+			},
+			{
+				"name": "",
+				"type": "uint8[]"
+			}
+		],
+		"payable": false,
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"constant": false,
+		"inputs": [
+			{
+				"name": "id",
+				"type": "uint256"
+			},
+			{
+				"name": "_distributor_product_info",
+				"type": "bytes32"
+			},
+			{
+				"name": "_distributor_product_value",
+				"type": "uint256"
+			},
+			{
+				"name": "_d_in",
+				"type": "uint8"
+			}
+		],
+		"name": "distributorProductDetails",
+		"outputs": [
+			{
+				"name": "",
+				"type": "bool"
+			}
+		],
+		"payable": false,
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"constant": true,
+		"inputs": [
+			{
+				"name": "_addr",
+				"type": "address"
+			}
+		],
+		"name": "getRole",
+		"outputs": [
+			{
+				"name": "",
+				"type": "uint8"
+			},
+			{
+				"name": "",
+				"type": "bytes32"
+			},
+			{
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"payable": false,
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"constant": true,
+		"inputs": [
+			{
+				"name": "_email",
+				"type": "bytes32"
+			},
+			{
+				"name": "_password",
+				"type": "bytes32"
+			}
+		],
+		"name": "login",
+		"outputs": [
+			{
+				"name": "",
+				"type": "bool"
+			}
+		],
+		"payable": false,
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"constant": true,
+		"inputs": [
+			{
+				"name": "id",
+				"type": "uint256"
+			}
+		],
+		"name": "general_public",
+		"outputs": [
+			{
+				"name": "",
+				"type": "bytes32"
+			},
+			{
+				"name": "",
+				"type": "bytes32"
+			},
+			{
+				"name": "",
+				"type": "bytes32"
+			},
+			{
+				"name": "",
+				"type": "bytes32"
+			},
+			{
+				"name": "",
+				"type": "bytes32"
+			},
+			{
+				"name": "",
+				"type": "uint256"
+			},
+			{
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"payable": false,
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"constant": false,
+		"inputs": [
+			{
+				"name": "id",
+				"type": "uint256"
+			},
+			{
+				"name": "_producer_product_name",
+				"type": "bytes32"
+			},
+			{
+				"name": "_producer_product_info",
+				"type": "bytes32"
+			},
+			{
+				"name": "_organic",
+				"type": "bytes32"
+			},
+			{
+				"name": "_producer_product_quantity",
+				"type": "uint256"
+			},
+			{
+				"name": "_producer_product_value",
+				"type": "uint256"
+			},
+			{
+				"name": "_exp_date",
+				"type": "uint256"
+			},
+			{
+				"name": "_p_in",
+				"type": "uint8"
+			}
+		],
+		"name": "producerEnterProductDetails",
+		"outputs": [
+			{
+				"name": "",
+				"type": "bool"
+			}
+		],
+		"payable": false,
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"constant": true,
+		"inputs": [],
+		"name": "dispalyForDistirbutor2",
+		"outputs": [
+			{
+				"name": "",
+				"type": "uint256[]"
+			},
+			{
+				"name": "",
+				"type": "uint256[]"
+			},
+			{
+				"name": "",
+				"type": "bytes32[]"
+			},
+			{
+				"name": "",
+				"type": "address[]"
+			},
+			{
+				"name": "",
+				"type": "bytes32[]"
+			}
+		],
+		"payable": false,
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"constant": false,
+		"inputs": [
+			{
+				"name": "_count",
+				"type": "uint256"
+			},
+			{
+				"name": "_addr",
+				"type": "address"
+			},
+			{
+				"name": "_role",
+				"type": "uint8"
+			},
+			{
+				"name": "_amt",
+				"type": "uint256"
+			}
+		],
+		"name": "setRole",
+		"outputs": [
+			{
+				"name": "",
+				"type": "bool"
+			}
+		],
+		"payable": false,
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"constant": true,
+		"inputs": [
+			{
+				"name": "id",
+				"type": "uint256"
+			}
+		],
+		"name": "FDA",
+		"outputs": [
+			{
+				"name": "",
+				"type": "bytes32"
+			},
+			{
+				"name": "",
+				"type": "uint256"
+			},
+			{
+				"name": "",
+				"type": "bytes32[]"
+			},
+			{
+				"name": "",
+				"type": "uint256[]"
+			},
+			{
+				"name": "",
+				"type": "bytes32[]"
+			},
+			{
+				"name": "",
+				"type": "uint256[]"
+			}
+		],
+		"payable": false,
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"constant": false,
+		"inputs": [
+			{
+				"name": "_name",
+				"type": "bytes32"
+			},
+			{
+				"name": "_email",
+				"type": "bytes32"
+			},
+			{
+				"name": "_password",
+				"type": "bytes32"
+			},
+			{
+				"name": "_warehouse",
+				"type": "bytes32"
+			},
+			{
+				"name": "_entity_type",
+				"type": "bytes32"
+			},
+			{
+				"name": "_entity_info",
+				"type": "bytes32"
+			}
+		],
+		"name": "setEntityInfo",
+		"outputs": [
+			{
+				"name": "",
+				"type": "bool"
+			}
+		],
+		"payable": false,
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"constant": true,
+		"inputs": [],
+		"name": "displayForDistributor1",
+		"outputs": [
+			{
+				"name": "",
+				"type": "uint256[]"
+			},
+			{
+				"name": "",
+				"type": "uint256[]"
+			},
+			{
+				"name": "",
+				"type": "uint256[]"
+			},
+			{
+				"name": "",
+				"type": "uint256[]"
+			},
+			{
+				"name": "",
+				"type": "bytes32[]"
+			},
+			{
+				"name": "",
+				"type": "bytes32[]"
+			},
+			{
+				"name": "",
+				"type": "uint8[]"
+			}
+		],
+		"payable": false,
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"constant": true,
+		"inputs": [],
+		"name": "getEntityInfo",
+		"outputs": [
+			{
+				"name": "",
+				"type": "uint256[]"
+			},
+			{
+				"name": "",
+				"type": "address[]"
+			},
+			{
+				"name": "",
+				"type": "uint8[]"
+			},
+			{
+				"name": "",
+				"type": "bytes32[]"
+			}
+		],
+		"payable": false,
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"constant": true,
+		"inputs": [],
+		"name": "chair_person",
+		"outputs": [
+			{
+				"name": "",
+				"type": "address"
+			}
+		],
+		"payable": false,
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"constant": false,
+		"inputs": [
+			{
+				"name": "id",
+				"type": "uint256"
+			},
+			{
+				"name": "_quantity",
+				"type": "uint256"
+			},
+			{
+				"name": "_addr",
+				"type": "address"
+			},
+			{
+				"name": "_d_in",
+				"type": "uint8"
+			}
+		],
+		"name": "RetailerBuyProduct",
+		"outputs": [
+			{
+				"name": "",
+				"type": "bool"
+			}
+		],
+		"payable": false,
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"constant": false,
+		"inputs": [
+			{
+				"name": "id",
+				"type": "uint256"
+			},
+			{
+				"name": "_quantity",
+				"type": "uint256"
+			},
+			{
+				"name": "_addr",
+				"type": "address"
+			},
+			{
+				"name": "_p_in",
+				"type": "uint8"
+			}
+		],
+		"name": "distributorBuyProduct",
+		"outputs": [
+			{
+				"name": "",
+				"type": "bool"
+			}
+		],
+		"payable": false,
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"constant": true,
+		"inputs": [
+			{
+				"name": "_addr",
+				"type": "address"
+			}
+		],
+		"name": "getAmount",
+		"outputs": [
+			{
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"payable": false,
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [],
+		"payable": false,
+		"stateMutability": "nonpayable",
+		"type": "constructor"
+	},
+	{
+		"anonymous": false,
+		"inputs": [
+			{
+				"indexed": false,
+				"name": "ProductID",
+				"type": "uint256"
+			},
+			{
+				"indexed": false,
+				"name": "Product_Name",
+				"type": "bytes32"
+			},
+			{
+				"indexed": false,
+				"name": "Producer_Address",
+				"type": "address"
+			},
+			{
+				"indexed": false,
+				"name": "Info",
+				"type": "bytes32"
+			},
+			{
+				"indexed": false,
+				"name": "Quantity",
+				"type": "uint256"
+			},
+			{
+				"indexed": false,
+				"name": "Price",
+				"type": "uint256"
+			},
+			{
+				"indexed": false,
+				"name": "",
+				"type": "string"
+			}
+		],
+		"name": "LogProductDetailsByProducer",
+		"type": "event"
+	},
+	{
+		"anonymous": false,
+		"inputs": [
+			{
+				"indexed": false,
+				"name": "Distributor",
+				"type": "address"
+			},
+			{
+				"indexed": false,
+				"name": "ProductID",
+				"type": "uint256"
+			},
+			{
+				"indexed": false,
+				"name": "Quantity",
+				"type": "uint256"
+			},
+			{
+				"indexed": false,
+				"name": "Producer",
+				"type": "address"
+			},
+			{
+				"indexed": false,
+				"name": "",
+				"type": "string"
+			}
+		],
+		"name": "LogPaymentByDistributor",
+		"type": "event"
+	},
+	{
+		"anonymous": false,
+		"inputs": [
+			{
+				"indexed": false,
+				"name": "Distributor",
+				"type": "address"
+			},
+			{
+				"indexed": false,
+				"name": "ProductID",
+				"type": "uint256"
+			},
+			{
+				"indexed": false,
+				"name": "Price",
+				"type": "uint256"
+			},
+			{
+				"indexed": false,
+				"name": "",
+				"type": "uint8"
+			},
+			{
+				"indexed": false,
+				"name": "",
+				"type": "string"
+			}
+		],
+		"name": "LogProductDetailsByDistributor",
+		"type": "event"
+	},
+	{
+		"anonymous": false,
+		"inputs": [
+			{
+				"indexed": false,
+				"name": "Retailer",
+				"type": "address"
+			},
+			{
+				"indexed": false,
+				"name": "ProductID",
+				"type": "uint256"
+			},
+			{
+				"indexed": false,
+				"name": "Quantity",
+				"type": "uint256"
+			},
+			{
+				"indexed": false,
+				"name": "Distributor",
+				"type": "address"
+			},
+			{
+				"indexed": false,
+				"name": "",
+				"type": "string"
+			}
+		],
+		"name": "LogPaymentByRetailer",
+		"type": "event"
+	},
+	{
+		"anonymous": false,
+		"inputs": [
+			{
+				"indexed": false,
+				"name": "printInfo",
+				"type": "string"
+			},
+			{
+				"indexed": false,
+				"name": "Name",
+				"type": "bytes32"
+			},
+			{
+				"indexed": false,
+				"name": "Email",
+				"type": "bytes32"
+			},
+			{
+				"indexed": false,
+				"name": "Warehouse",
+				"type": "bytes32"
+			},
+			{
+				"indexed": false,
+				"name": "Entity_type",
+				"type": "bytes32"
+			},
+			{
+				"indexed": false,
+				"name": "Entity_info",
+				"type": "bytes32"
+			},
+			{
+				"indexed": false,
+				"name": "Role",
+				"type": "uint8"
+			},
+			{
+				"indexed": false,
+				"name": "amount",
+				"type": "uint256"
+			}
+		],
+		"name": "LogEntityInfoSet",
+		"type": "event"
+	},
+	{
+		"anonymous": false,
+		"inputs": [
+			{
+				"indexed": false,
+				"name": "Count",
+				"type": "uint256"
+			},
+			{
+				"indexed": false,
+				"name": "Address",
+				"type": "address"
+			},
+			{
+				"indexed": false,
+				"name": "Name",
+				"type": "bytes32"
+			},
+			{
+				"indexed": false,
+				"name": "Role",
+				"type": "uint8"
+			},
+			{
+				"indexed": false,
+				"name": "sent",
+				"type": "string"
+			}
+		],
+		"name": "LogRoleSet",
+		"type": "event"
+	}
+]

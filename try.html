@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Track it</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+  <link href='https://fonts.googleapis.com/css?family=Open+Sans:300,700' rel='stylesheet' type='text/css'>
+  <script src="jquery-3.3.1.min.js"></script>
+  <script src="./app.js"></script>
+   <style>
+  .hide {
+  display: none;
+  }
+
+  .jumbotron
+   {   
+    padding-top: 0px;
+    padding-bottom:0px;
+    background-size: cover;
+    background-color: azure;
+    height:20%;
+   }
+ #one, #two, #three {
+   width:32%;
+   float:left;
+   display:inline-block;
+   margin-right: 1%;
+ }
+
+
+
+#one { background: #87CEFA; }
+#two { background: #87CEFA; }
+#three { background: #87CEFA; }
+
+  </style>
+     
+ <script>
+   $(document).on('change', '.div-toggle', function() {
+  var target = $(this).data('target');
+  var show = $("option:selected", this).data('show');
+  $(target).children().addClass('hide');
+  $(show).removeClass('hide');
+  });
+  $(document).ready(function(){
+	$('.div-toggle').trigger('change');
+  });
+  </script>
+ 
+ 
+
+</head>
+<body>
+
+<div class="jumbotron text-center">
+  <h1>Track it</h1>
+  <p><h3>Food supply chain management app</h3></p>
+  Enter your Role &#9;<select class="div-toggle" data-target=".my-info-1">
+  <option value="chair" data-show=".chair">ChairPerson</option>
+  <option value="producer" data-show=".producer">Producer</option>
+  <option value="distributor" data-show=".distributor">Distributor</option>
+  <option value="retailer" data-show=".retailer">Retailer</option>
+  <option value="fda" data-show=".fda">FDA</option>
+  <option value="consumer" data-show=".consumer">Consumer</option>
+</select>
+</div>
+<div class="my-info-1">
+<!------------------------------------- chair person -->
+  <div class="chair hide">
+        
+ <div id="one">
+       <h3>Get Entity Details</h3><br>
+
+      <button id="getEntityInfo" onclick="App.getEntityInfo()">Get Entity</button><br><br>
+      Count:  <p id="_count1"></p><br><br>
+      Name:  <p id="_name1"></p><br><br>
+      Address:<p id="_addr1"></p><br><br>
+      Role: <p id="roles"></p><br><br>
+ </div>
+ <div id="two">
+     <h3>Set Role</h3><br><br>
+      <label for="setCount" class="col-lg-2 control-label">Count</label>
+      <input id="setCount" type="text"><br><br>
+
+      <label for="setAddress" class="col-lg-2 control-label">Address</label>
+      <input id="setAddress" type="text"><br><br>
+    
+      <label for="setRole" class="col-lg-2 control-label">Role</label>
+      <input id="setRole" type="text"><br><br>
+    
+      <label for="setAmount" class="col-lg-2 control-label">Amount</label>
+      <input id="setAmount" type="text"><br><br>
+      
+      <button type="button" onclick='document.getElementById("demo").innerHTML = "0-Producer 1-Distributor 2-Retailer"'>Conditions</button>
+      <p id="demo"></p>
+      <button id="setRole" onclick="App.setRole()">Set Role</button><br><br>
+ </div>
+
+<div id="three">
+	
+	<h3>Get Role</h3><br><br>
+
+      <label for="getAddress" class="col-lg-2 control-label">Address</label>
+      <input id="getAddress" type="text"><br><br>
+
+      <button id="getRol" onclick="App.getRole()">Get Role</button><br><br>
+      Role:  <input style="border:none;background-color:transparent" id="getRole"><br><br>
+      Name:  <input style="border:none;background-color:transparent" id="getName"><br><br>
+      Amount: <input style="border:none;background-color:transparent" id="getAmount"><br><br>
+
+</div>
+ 
+  
+  </div>
+<!----------------------------------------producer---------------------->
+  <div class="producer hide">
+   <div id="one">
+      <h3>Enter Product Details</h3><br><br>
+
+      <label for="_id" class="col-lg-2 control-label">Product ID</label>
+      <input id="_id" type="text"><br><br>
+
+      <label for="_pname" class="col-lg-2 control-label">Product Name</label>
+      <input id="_pname" type="text"><br><br>
+    
+      <label for="_organic" class="col-lg-2 control-label">Organic</label>
+      <input id="_organic" type="text"><br><br>
+    
+      <label for="_infog" class="col-lg-2 control-label">Additional Information</label>
+      <input id="_infog" type="text"><br><br>
+
+      <label for="_quantity" class="col-lg-2 control-label">Quantity</label>
+      <input id="_quantity" type="text"><br><br>
+
+      <label for="_value" class="col-lg-2 control-label">Price</label>
+      <input id="_price" type="text"><br><br>
+
+      <label for="_expDate" class="col-lg-2 control-label">Expiration Date</label>
+      <input id="_expDate" type="text"><br><br>
+
+      <label for="_cond" class="col-lg-2 control-label">Condition</label>
+      <input id="_cond" type="text"><br><br>
+      
+      <button id="producerEnterProductDetails" onclick="App.producerEnterProductDetails()">Enter Product Details</button><br><br>  
+   </div>
+   
+
+   <div id="two">
+       <h3>Get Product Details</h3><br><br>
+
+    <button id="getProductInfoByProducer1" onclick="App.displayForDistributor1()">View Product Details</button><br><br>
+    Product Count:  <p id="prodCount"></p><br><br>
+    Product ID:  <p id="prodID"></p><br><br>
+    Product Quantity:<p id="prodQuant"></p><br><br>
+    Product Price: <p id="prodPrice"></p><br><br>
+
+    Product Name:  <p id="prodName"></p><br><br>
+    Organic:  <p id="prodOrg"></p><br><br>
+    Product Condition:<p id="prodCond"></p><br><br>
+    Production Date: <p id="mfg"></p><br><br>
+    Expiration Date: <p id="expDate"></p><br><br>
+    Producer Name: <p id="pName"></p><br><br>
+    Producer Address: <p id="pAddr"></p><br><br>
+    Producer Info:  <p id="pEntity"></p><br><br>
+   </div>
+
+
+  </div>
+<!--------------------------------------------------distributor --------------------->
+  <div class="distributor hide">
+	<div id="one">
+		<h3>Get Product Details</h3><br><br>
+
+    <button id="getProductInfoByProducer1" onclick="App.displayForDistributor1()">View Product Details</button><br><br>
+    Product Count:  <p id="prodCount"></p><br><br>
+    Product ID:  <p id="prodID"></p><br><br>
+    Product Quantity:<p id="prodQuant"></p><br><br>
+    Product Price: <p id="prodPrice"></p><br><br>
+
+    Product Name:  <p id="prodName"></p><br><br>
+    Organic:  <p id="prodOrg"></p><br><br>
+    Product Condition:<p id="prodCond"></p><br><br>
+    Production Date: <p id="mfg"></p><br><br>
+    Expiration Date: <p id="expDate"></p><br><br>
+    Producer Name: <p id="pName"></p><br><br>
+    Producer Address: <p id="pAddr"></p><br><br>
+    Producer Info:  <p id="pEntity"></p><br><br>
+        </div>
+	<div id="two">
+
+			<h3>Distributor Make payment</h3><br><br>
+  <label for="_dpid" class="col-lg-2 control-label">Enter Product ID</label>
+  <input id="_dpid" type="text"><br>
+
+  <label for="_damt" class="col-lg-2 control-label">Enter Quantity</label>
+  <input id="_damt" type="text"><br>
+
+  <label for="_daddr" class="col-lg-2 control-label">Enter Address</label>
+  <input id="_daddr" type="text"><br>
+
+  <label for="_dcond" class="col-lg-2 control-label">Enter Condition</label>
+  <input id="_dcond" type="text"><br>
+
+  <button id="getAmount" onclick="App.distributorBuyProduct()">Purchase</button><br><br>
+
+        </div>
+	<div id="three">
+
+		<h3>Enter Distributor Details</h3><br><br>
+    <label for="_dppid" class="col-lg-2 control-label">Product ID</label>
+    <input id="_dppid" type="text"><br><br>
+  
+    <label for="_dpinfo" class="col-lg-2 control-label">Product Info</label>
+    <input id="_dpinfo" type="text"><br><br>
+  
+    <label for="_dpvalue" class="col-lg-2 control-label">Product Price</label>
+    <input id="_dpvalue" type="text"><br><br>
+
+    <label for="_dpcond" class="col-lg-2 control-label">Condition</label>
+    <input id="_dpcond" type="text"><br><br>
+    
+    <button id="enterDistributorDetails" onclick="App.distributorProductDetails()">Enter Product Details</button><br><br>
+
+
+        </div>
+	
+      
+  </div>
+<!--------------------------------------------------retailer------------------------->
+  <div class="retailer hide">
+      
+    <div id="one">
+ 
+     <h3>Get Product Details</h3><br><br>
+
+  <button id="displayForRetailer1" onclick="App.displayForRetailer1()">View Product Details</button><br><br>
+  Product Count:  <p id="dcount"></p><br><br>
+  Product ID:  <p id="dID"></p><br><br>
+  Product Name:<p id="dpName"></p><br><br>
+  Expiration date: <p id="dexp"></p><br><br>
+  Distributor Name: <p id="dName"></p><br><br>
+  Distributor Address: <p id="dpAddr"></p><br><br>
+
+  Product Quantity:  <p id="dQuan"></p><br><br>
+  Price:  <p id="dPrice"></p><br><br>
+  Condition:<p id="dCond"></p><br><br>
+
+    </div>
+
+    <div id="two">
+      <h3>Retailer Make payment</h3><br><br>
+  <label for="_drpid" class="col-lg-2 control-label">Enter Product ID</label>
+  <input id="_drpid" type="text"><br>
+
+  <label for="_dramt" class="col-lg-2 control-label">Enter Quantity</label>
+  <input id="_dramt" type="text"><br>
+
+  <label for="_draddr" class="col-lg-2 control-label">Enter Address</label>
+  <input id="_draddr" type="text"><br>
+
+  <label for="_drcond" class="col-lg-2 control-label">Enter Condition</label>
+  <input id="_drcond" type="text"><br>
+
+  <button id="getAmountR" onclick="App.RetailerBuyProduct()">Purchase</button><br><br>
+ 
+  <span id="print2"></span><br><br>
+
+    </div>
+
+ </div>
+<!-----------------------------------------------fda -------------------------->
+ <div class="fda hide">
+  <div class="one">
+         <h3>FDA Product history</h3><br><br>
+  <label for="fID" class="col-lg-2 control-label">Product ID</label>
+  <input id="fID" type="text"><br>
+
+  <button id="FDA" onclick="App.FDA()">View Product Details</button><br><br>
+  
+  Producer Name:  <p id="_fname"></p><br><br>
+  Production Time:<p id="_ftime"></p><br><br>
+  Distributor Name: <p id="fdname"></p><br><br>
+  Distributor Purchase time: <p id="fdtime"></p><br><br>
+  Retailer Name: <p id="frname"></p><br><br>
+  Retailer Purchase time: <p id="frtime"></p><br><br>
+  </div>
+
+ </div>
+<!-----------------------------------------------fda -------------------------->
+ <div class="consumer hide">
+  <div class="one">
+     <h3>Get Product Details</h3><br><br>
+  <label for="gID" class="col-lg-2 control-label">Product ID</label>
+  <input id="gID" type="text"><br>
+
+  <button id="general_public" onclick="App.general_public()">View Product Details</button><br><br>
+  
+  Producer Name:  <p id="_gname"></p><br><br>
+  Producer Info:<p id="_ginfo"></p><br><br>
+  Product Name: <p id="_gpname"></p><br><br>
+  Product Info: <p id="_gpinfo"></p><br><br>
+  Organic: <p id="_gorg"></p><br><br>
+  Production Date: <p id="_gdate"></p><br><br>
+  Expiration Date: <p id="_gexp"></p><br><br>
+
+  </div>
+
+ </div>
+</div>
+</body>
+</html>
+
